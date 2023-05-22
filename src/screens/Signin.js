@@ -51,12 +51,8 @@ const Signin = ({ navigation }) => {
         validationSchema={loginValidationSchema}
         initialValues={{ email: "", password: "" }}
         onSubmit={async (values) => {
-          const response = await axios.post("http://localhost:5000/signin", {
-            header: {
-              "content-type": "appliction/form-data",
-            },
-            body: JSON.stringify(values),
-          });
+          const response = await axios.post("/login",values);
+          console.log(response.data)          
         }}
       >
         {({

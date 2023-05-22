@@ -4,6 +4,7 @@ const color = {
   black: "#2D3748",
   lightGrey: "#D3D3D3",
   darkGrey: "#696B81",
+  orange:'orange'
 };
 
 export default color;

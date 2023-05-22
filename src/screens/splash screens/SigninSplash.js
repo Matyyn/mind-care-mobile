@@ -41,13 +41,13 @@ const SigninSplash = ({ navigation }) => {
           marginTop: 5,
         }}
       >
-        <Text style={{ color: color.darkGrey }}>Don't have an account?</Text>
+        <Text style={{ color: color.darkGrey,fontSize:20,marginTop:5 }}>Don't have an account?</Text>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate("Create Account");
           }}
         >
-          <Text style={{ fontWeight: "bold", marginLeft: 5 }}>Sign up</Text>
+          <Text style={{ fontWeight: "bold", marginLeft: 5 ,fontSize:20,marginTop:5 }}>Sign up</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -66,7 +66,8 @@ const styles = StyleSheet.create({
     marginTop: 90,
   },
   text: {
-    fontSize: 45,
+    marginTop:"10%",
+    fontSize: 35,
     fontWeight: "bold",
     color: color.grey,
     textAlign: "center",

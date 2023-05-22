@@ -67,20 +67,21 @@ const CreateAccount = ({ navigation }) => {
           confirmPassword: "",
         }}
         onSubmit={async (values) => {
+          const response = await axios.post("/signup",values);
           //   const response = await axios.post("http://localhost:5000/signin", {
           //     header: {
           //       "content-type": "appliction/form-data",
           //     },
           //     body: JSON.stringify(values),
           //   });
-          Alert.alert(null, "Account Created", [
-            {
-              text: "Cancel",
-              onPress: () => console.log("Cancel Pressed"),
-              style: "cancel",
-            },
-            { text: "OK", onPress: () => navigation.navigate("Sign in") },
-          ]);
+          // Alert.alert(null, "Account Created", [
+          //   {
+          //     text: "Cancel",
+          //     onPress: () => console.log("Cancel Pressed"),
+          //     style: "cancel",
+          //   },
+          //   { text: "OK", onPress: () => navigation.navigate("Sign in") },
+          // ]);
         }}
       >
         {({

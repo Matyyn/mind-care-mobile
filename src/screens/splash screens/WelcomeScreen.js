@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useEffect } from "react";
 import {
   View,
   Text,
@@ -11,6 +11,13 @@ const welcome = require("../../../assets/images/welcome.png");
 import color from "../../constants/colors";
 
 const WelcomeScreen = ({ navigation }) => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.navigate("Screen1"); 
+    }, 1500); 
+
+    return () => clearTimeout(timer); 
+  }, []);
   return (
     <SafeAreaView>
       <View style={styles.imageContainer}>
@@ -19,10 +26,10 @@ const WelcomeScreen = ({ navigation }) => {
       </View>
       <View style={{ paddingLeft: 40, paddingRight: 40 }}>
         <Text
-          style={{ textAlign: "center", color: color.darkGrey, fontSize: 16 }}
+          style={{ textAlign: "center", color: color.darkGrey, fontSize: 20 }}
         >
           Speak with licensed therapists or take on self guided programs,
-          entirely within a signle platform
+          entirely within a single platform
         </Text>
       </View>
     </SafeAreaView>
@@ -41,18 +48,18 @@ const styles = StyleSheet.create({
     marginTop: 90,
   },
   text: {
-    fontSize: 35,
+    marginTop:"20%",
+    fontSize: 30,
     fontWeight: "bold",
     color: color.grey,
     textAlign: "center",
-    marginTop: 25,
   },
   buttonParent: {
     marginTop: 60,
     alignItems: "center",
   },
   button: {
-    backgroundColor: color.grey,
+    color: color.grey,
     alignItems: "center",
     padding: 10,
     borderRadius: 10,

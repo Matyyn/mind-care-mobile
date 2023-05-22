@@ -4,10 +4,16 @@ import { Provider as PaperProvider } from "react-native-paper";
 import { AppRegistry } from "react-native";
 import { name as appName } from "./app.json";
 import color from "./src/constants/colors";
-import Navigation from "./src/components/Navigation";
+import WeeklyTabNavigator from './src/components/InsightsTab'
+import JournalLogsTab from './src/components/JournalLogsTab'
+//import Navigation from "./src/components/Navigation";
 import Profile from "./src/screens/Profile";
+import BottomTabs from "./src/components/TabNavigator"
 import { NavigationContainer } from "@react-navigation/native";
-
+import Navigation from "./src/components/StartingScreenNavigator";
+import axios from "axios";
+// axios.defaults.baseURL = "http://127.0.0.1:8080/api/v1/client"
+axios.defaults.baseURL = "https://mind-care.up.railway.app/api/v1/client"
 // import Settings from "./src/screens/Settings";
 import {
   useFonts,
@@ -44,11 +50,15 @@ export default function App() {
   }
   return (
     <PaperProvider>
-      {/* <NavigationContainer>
-        <TabNavigator />  
-      </NavigationContainer> */}
+
+      <NavigationContainer> 
+        <BottomTabs/>
+      </NavigationContainer>
+      {/* <Navigation /> */}
       {/* <MainScreen /> */}
-      <Navigation />
+      {/* <NavigationContainer>      
+         <JournalLogsTab/>
+      </NavigationContainer>  */}
       {/* <ForgotPassword /> */}
       {/* <Profile /> */}
       {/* <Signin /> */}

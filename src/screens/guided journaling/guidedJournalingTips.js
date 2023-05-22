@@ -7,7 +7,7 @@ import {
   SafeAreaView,
 } from "react-native";
 import color from "../../constants/colors";
-
+import Icon from 'react-native-vector-icons/FontAwesome5';
 const GuidedJournalingTips = ({ navigation, route }) => {
   useEffect(() => {
     // const { journalName } = route.params;
@@ -18,6 +18,11 @@ const GuidedJournalingTips = ({ navigation, route }) => {
   React.useLayoutEffect(() => {
     navigation.setOptions({
       title: journalTitle,
+      headerRight: () => (
+        <TouchableOpacity onPress={() => navigation.navigate('JournalsTab')}>
+          <Icon name="clipboard-list" size={30} color="black" style={styles.copyIcon} />
+        </TouchableOpacity>
+      ),
     });
   }, [navigation, journalTitle]);
   const [tip1, setTip1] = useState(
@@ -48,7 +53,7 @@ const GuidedJournalingTips = ({ navigation, route }) => {
             <TouchableOpacity
               style={styles.button}
               onPress={() => {
-                setTip1("");
+                navigation.navigate('writeJournal', { journalTitle });
               }}
             >
               <Text style={styles.buttonText}>Next</Text>
@@ -65,7 +70,7 @@ const GuidedJournalingTips = ({ navigation, route }) => {
             <TouchableOpacity
               style={styles.button}
               onPress={() => {
-                setTip2("");
+                navigation.navigate('writeJournal', { journalTitle });
               }}
             >
               <Text style={styles.buttonText}>Next</Text>
@@ -82,7 +87,7 @@ const GuidedJournalingTips = ({ navigation, route }) => {
             <TouchableOpacity
               style={styles.button}
               onPress={() => {
-                setTip3("");
+                navigation.navigate('writeJournal', { journalTitle });
               }}
             >
               <Text style={styles.buttonText}>Next</Text>
