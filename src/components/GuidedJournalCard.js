@@ -27,7 +27,11 @@ const GuidedJournalCard = ({ key, image, title }) => {
               });
             }
           }
+<<<<<<< HEAD
 
+=======
+          console.log("hello");
+>>>>>>> cf1454f053058a3ea58f2526ace4541be8bc6b68
         }}
       >
         <Card>
